@@ -1,0 +1,2132 @@
+{
+	"info": {
+		"_postman_id": "29f9f831-0a1a-4c92-8010-15e6e6cc8ea0",
+		"name": "Image Uploading",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24956420",
+		"_collection_link": "https://cloudy-space-829495.postman.co/workspace/Testing-Laravel~7c36b56c-f974-4434-a00a-ce903881cba4/collection/24956420-29f9f831-0a1a-4c92-8010-15e6e6cc8ea0?action=share&source=collection_link&creator=24956420"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"updateakm@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/login",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"adminpass\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/login",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"login"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User login successfully.\",\n    \"data\": {\n        \"token\": \"1|qqJKZsgA62dmanlCBuyZl5vrXSAuX36gjFGw7Nqh248d6944\",\n        \"name\": \"Admin\",\n        \"id\": 1,\n        \"role\": [\n            \"admin\"\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/logout",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/admin/logout",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"logout"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User logout successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "akm",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "akm@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0921212121",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adminpass",
+									"type": "text"
+								},
+								{
+									"key": "confirm-password",
+									"value": "adminpass",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "DEVELOPER",
+									"description": " //default type is USER (Use Capital Letter)",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "roles[0]",
+									"value": "developer",
+									"description": "//can assign or not ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/users",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "akm",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "akm@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "09121212121",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "adminpass",
+											"type": "text"
+										},
+										{
+											"key": "confirm-password",
+											"value": "adminpass",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "DEVELOPER",
+											"description": " //default type is USER (Use Capital Letter)",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "roles[0]",
+											"value": "developer",
+											"description": "//can assign or not ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/users",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 13:46:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": 200,\n    \"data\": \"User created successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/users?page=1&per_page=1",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_base_url}}/admin/users?page=1&per_page=1",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Jul 2024 03:26:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Get all users successful\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 1,\n                \"name\": \"Admin\",\n                \"email\": \"admin@gmail.com\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\",\n                \"permissions\": [\n                    \"role-list\",\n                    \"role-create\",\n                    \"role-edit\",\n                    \"role-delete\",\n                    \"user-list\",\n                    \"user-create\",\n                    \"user-edit\",\n                    \"user-delete\",\n                    \"permission-list\",\n                    \"permission-create\",\n                    \"permission-edit\",\n                    \"permission-delete\"\n                ],\n                \"roles\": [\n                    \"admin\"\n                ]\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/admin/users?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/admin/users?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/admin/users?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/admin/users\",\n        \"per_page\": 1,\n        \"prev_page_url\": null,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "update akm",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "updateakm@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "09123123123",
+									"type": "text"
+								},
+								{
+									"key": "roles[0]",
+									"value": "admin",
+									"description": "//can assign or not ",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "USER",
+									"description": " //default type is USER (Use Capital Letter)",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/users/3",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "update akm",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "updateakm@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "09123123123",
+											"type": "text"
+										},
+										{
+											"key": "roles[0]",
+											"value": "admin",
+											"description": "//can assign or not ",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "USER",
+											"description": " //default type is USER (Use Capital Letter)",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/users/3",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"3"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": 200,\n    \"data\": \"User updated successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/users/2",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_base_url}}/admin/users/2",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.10"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 05 Aug 2024 02:43:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/users/3",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/users/3",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 13:50:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Get User detail is Successful\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"update akm\",\n        \"email\": \"updateakm@gmail.com\",\n        \"phone\": \"09123123123\",\n        \"email_verified_at\": null,\n        \"type\": \"USER\",\n        \"provider_id\": null,\n        \"provider\": null,\n        \"status\": \"1\",\n        \"is_deleted\": \"0\",\n        \"token\": null,\n        \"last_login\": null,\n        \"created_at\": \"2024-10-11T09:14:53.000000Z\",\n        \"updated_at\": \"2024-10-11T09:20:14.000000Z\",\n        \"permissions\": [\n            {\n                \"id\": 1,\n                \"name\": \"role-list\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"role-create\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"role-edit\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"role-delete\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"user-list\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"user-create\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"user-edit\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"user-delete\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"permission-list\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"permission-create\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"permission-edit\"\n            },\n            {\n                \"id\": 12,\n                \"name\": \"permission-delete\"\n            }\n        ],\n        \"roles\": [\n            {\n                \"id\": 3,\n                \"name\": \"admin\",\n                \"pivot\": {\n                    \"model_type\": \"App\\\\Models\\\\User\",\n                    \"model_id\": 3,\n                    \"role_id\": 3\n                },\n                \"permissions\": [\n                    {\n                        \"id\": 1,\n                        \"name\": \"role-list\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 1\n                        }\n                    },\n                    {\n                        \"id\": 2,\n                        \"name\": \"role-create\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 2\n                        }\n                    },\n                    {\n                        \"id\": 3,\n                        \"name\": \"role-edit\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 3\n                        }\n                    },\n                    {\n                        \"id\": 4,\n                        \"name\": \"role-delete\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 4\n                        }\n                    },\n                    {\n                        \"id\": 5,\n                        \"name\": \"user-list\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 5\n                        }\n                    },\n                    {\n                        \"id\": 6,\n                        \"name\": \"user-create\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 6\n                        }\n                    },\n                    {\n                        \"id\": 7,\n                        \"name\": \"user-edit\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 7\n                        }\n                    },\n                    {\n                        \"id\": 8,\n                        \"name\": \"user-delete\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 8\n                        }\n                    },\n                    {\n                        \"id\": 9,\n                        \"name\": \"permission-list\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 9\n                        }\n                    },\n                    {\n                        \"id\": 10,\n                        \"name\": \"permission-create\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 10\n                        }\n                    },\n                    {\n                        \"id\": 11,\n                        \"name\": \"permission-edit\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 11\n                        }\n                    },\n                    {\n                        \"id\": 12,\n                        \"name\": \"permission-delete\",\n                        \"guard_name\": \"api\",\n                        \"status\": \"1\",\n                        \"is_deleted\": \"0\",\n                        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n                        \"pivot\": {\n                            \"role_id\": 3,\n                            \"permission_id\": 12\n                        }\n                    }\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "change password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "current_password",
+									"value": "adminpass",
+									"type": "text"
+								},
+								{
+									"key": "new_password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/users/change_password/3",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"users",
+								"change_password",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "current_password",
+											"value": "adminpass",
+											"type": "text"
+										},
+										{
+											"key": "new_password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/users/change_password/4",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"users",
+										"change_password",
+										"4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jun 2024 18:41:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Change Password is successful\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_base_url}}/admin/roles",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local_base_url}}/admin/roles?page=1&per_page=1",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"roles"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Jul 2024 03:19:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Success\",\n    \"data\": [\n        {\n            \"id\": 4,\n            \"name\": \"officers\",\n            \"status\": \"1\",\n            \"is_deleted\": \"0\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"admin\",\n            \"status\": \"1\",\n            \"is_deleted\": \"0\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"super admin\",\n            \"status\": \"1\",\n            \"is_deleted\": \"0\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"developer\",\n            \"status\": \"1\",\n            \"is_deleted\": \"0\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Testing",
+									"type": "text"
+								},
+								{
+									"key": "permissions[0]",
+									"value": "role-create",
+									"type": "text"
+								},
+								{
+									"key": "permissions[1]",
+									"value": "role-edit",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/roles/2",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"roles",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "teacherUPD",
+											"type": "text"
+										},
+										{
+											"key": "permissions[0]",
+											"value": "role-create",
+											"type": "text"
+										},
+										{
+											"key": "permissions[1]",
+											"value": "role-edit",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/roles/2",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"roles",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jun 2024 10:13:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": 200,\n    \"data\": \"Successfully updated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/roles/2",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"roles",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_base_url}}/admin/roles/2",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"roles",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 15 Jun 2024 12:03:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Role deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "hello",
+									"type": "text"
+								},
+								{
+									"key": "permissions[0]",
+									"value": "user-list",
+									"type": "text"
+								},
+								{
+									"key": "permissions[1]",
+									"value": "user-create",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "permissions[2]",
+									"value": "user-delete",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/roles",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"roles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "teacherUPD",
+											"type": "text"
+										},
+										{
+											"key": "permissions[0]",
+											"value": "user-list",
+											"type": "text"
+										},
+										{
+											"key": "permissions[1]",
+											"value": "user-create",
+											"type": "text"
+										},
+										{
+											"key": "permissions[2]",
+											"value": "user-delete",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/roles",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"roles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 07:59:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": 200,\n    \"data\": \"Role create successful\"\n}"
+						}
+					]
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/roles/3",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"roles",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_base_url}}/admin/roles/1",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"roles",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 07:49:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Get role detail successul\",\n    \"data\": {\n        \"permissions\": [\n            \"role-list\",\n            \"role-create\",\n            \"role-edit\",\n            \"role-delete\",\n            \"user-list\",\n            \"user-create\",\n            \"user-edit\",\n            \"user-delete\",\n            \"permission-list\",\n            \"permission-create\",\n            \"permission-edit\",\n            \"permission-delete\"\n        ],\n        \"role\": {\n            \"id\": 3,\n            \"name\": \"admin\",\n            \"guard_name\": \"api\",\n            \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n            \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n            \"status\": \"1\",\n            \"is_deleted\": \"0\",\n            \"permissions\": [\n                {\n                    \"id\": 10,\n                    \"name\": \"permission-create\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 10\n                    }\n                },\n                {\n                    \"id\": 12,\n                    \"name\": \"permission-delete\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 12\n                    }\n                },\n                {\n                    \"id\": 11,\n                    \"name\": \"permission-edit\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 11\n                    }\n                },\n                {\n                    \"id\": 9,\n                    \"name\": \"permission-list\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 9\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"role-create\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 2\n                    }\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"role-delete\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 4\n                    }\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"role-edit\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 3\n                    }\n                },\n                {\n                    \"id\": 1,\n                    \"name\": \"role-list\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 1\n                    }\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"user-create\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 6\n                    }\n                },\n                {\n                    \"id\": 8,\n                    \"name\": \"user-delete\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 8\n                    }\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"user-edit\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 7\n                    }\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"user-list\",\n                    \"pivot\": {\n                        \"role_id\": 3,\n                        \"permission_id\": 5\n                    }\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Permissions",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_base_url}}/admin/permissions?page=1&per_page=10",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"permissions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local_base_url}}/admin/permissions?page=1&per_page=10",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"permissions"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "per_page",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 01 Jul 2024 02:05:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Get all premissions successful\",\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 12,\n                \"name\": \"permission-delete\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 11,\n                \"name\": \"permission-edit\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 10,\n                \"name\": \"permission-create\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 9,\n                \"name\": \"permission-list\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 8,\n                \"name\": \"user-delete\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"user-edit\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 6,\n                \"name\": \"user-create\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 5,\n                \"name\": \"user-list\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"role-delete\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            },\n            {\n                \"id\": 3,\n                \"name\": \"role-edit\",\n                \"status\": \"1\",\n                \"is_deleted\": \"0\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/admin/permissions?page=1\",\n        \"from\": 1,\n        \"last_page\": 2,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/admin/permissions?page=2\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/admin/permissions?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/admin/permissions?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/admin/permissions?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/admin/permissions?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/admin/permissions\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 12\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "user-create permission",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/permissions",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"permissions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "user-create permission",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/permissions",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"permissions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 07:30:34 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": 201,\n    \"data\": \"Permission created successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/permissions/3",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"permissions",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_base_url}}/admin/permissions/34",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"permissions",
+										"34"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 07:31:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Get Permission detail is Successful\",\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"role-edit\",\n        \"guard_name\": \"api\",\n        \"status\": \"1\",\n        \"is_deleted\": \"0\",\n        \"created_at\": \"2024-10-11T07:59:25.000000Z\",\n        \"updated_at\": \"2024-10-11T07:59:25.000000Z\",\n        \"roles\": [\n            {\n                \"id\": 1,\n                \"name\": \"developer\",\n                \"pivot\": {\n                    \"permission_id\": 3,\n                    \"role_id\": 1\n                }\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Testing\",\n                \"pivot\": {\n                    \"permission_id\": 3,\n                    \"role_id\": 2\n                }\n            },\n            {\n                \"id\": 3,\n                \"name\": \"admin\",\n                \"pivot\": {\n                    \"permission_id\": 3,\n                    \"role_id\": 3\n                }\n            },\n            {\n                \"id\": 4,\n                \"name\": \"officers\",\n                \"pivot\": {\n                    \"permission_id\": 3,\n                    \"role_id\": 4\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "permission-delete",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/permissions/12",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"permissions",
+								"12"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "user-create permission UPD",
+											"type": "text"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/permissions/13",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"permissions",
+										"13"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 07:32:52 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": 200,\n    \"data\": \"Permission updated successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}/admin/permissions/13",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"permissions",
+								"13"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_base_url}}/admin/permissions/13",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"permissions",
+										"13"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Jun 2024 07:33:49 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"User deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Image Upload",
+			"item": [
+				{
+					"name": "Single Image Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/akm/Downloads/Telegram Desktop/Grader 1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/images/upload",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"images",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/run/user/1000/doc/59360111/1720631420.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/images/upload",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"images",
+										"upload"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jul 2024 15:47:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Image upload successful\",\n    \"data\": {\n        \"thumb_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/NaiR3pukLxGQWhclcHQNCxAxgD9lynK6yjA8PltZ.png\",\n        \"small_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/rycQCpcWS8fjRdJw28y6BYpczEnbGWLhNIajDd0Y.png\",\n        \"medium_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/S6rPirVnkPpewspDMNqeZI7Wj3ZAjD1lPvM6b1mF.png\",\n        \"large_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/NaiR3pukLxGQWhclcHQNCxAxgD9lynK6yjA8PltZ.png\",\n        \"file_name\": \"1720631420.png\",\n        \"file_size\": 258967,\n        \"file_type\": \"image/png\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteByUrls",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"thumb_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/NaiR3pukLxGQWhclcHQNCxAxgD9lynK6yjA8PltZ.png\",\n    \"small_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/rycQCpcWS8fjRdJw28y6BYpczEnbGWLhNIajDd0Y.png\",\n    \"medium_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/S6rPirVnkPpewspDMNqeZI7Wj3ZAjD1lPvM6b1mF.png\",\n    \"large_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/NaiR3pukLxGQWhclcHQNCxAxgD9lynK6yjA8PltZ.png\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_base_url}}/admin/images",
+							"host": [
+								"{{local_base_url}}"
+							],
+							"path": [
+								"admin",
+								"images"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"thumb_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/NaiR3pukLxGQWhclcHQNCxAxgD9lynK6yjA8PltZ.png\",\n   \"small_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/rycQCpcWS8fjRdJw28y6BYpczEnbGWLhNIajDd0Y.png\",\n    \"medium_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/S6rPirVnkPpewspDMNqeZI7Wj3ZAjD1lPvM6b1mF.png\",\n    \"large_url\": \"https://elg-demo.s3.ap-southeast-1.amazonaws.com/car/NaiR3pukLxGQWhclcHQNCxAxgD9lynK6yjA8PltZ.png\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_base_url}}/admin/images",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"images"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jul 2024 15:48:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Image deleted successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteByImageId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local_base_url}}}/admin/images/:id",
+							"host": [
+								"{{local_base_url}}}"
+							],
+							"path": [
+								"admin",
+								"images",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local_base_url}}/admin/images/2",
+									"host": [
+										"{{local_base_url}}"
+									],
+									"path": [
+										"admin",
+										"images",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.9"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Jul 2024 15:47:36 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"Image deleted successfully.\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
