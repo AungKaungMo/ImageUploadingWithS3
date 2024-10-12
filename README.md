@@ -4,7 +4,6 @@ This project is a Laravel application that provides functionality for:
 
 - **Image Uploading**: Allows users to upload images through a web form or API endpoint.
 - **Image Resizing**: Automatically resizes uploaded images to various dimensions.
-- **Image Zipping**: Compresses multiple images into a zip file for easy download.
 - **AWS S3 Upload**: Uploads processed images to an AWS S3 bucket for scalable storage.
 - **User Authentication**: Implements secure API authentication using Laravel Sanctum.
 - **Role and Permission Management**: Utilizes Spatie's Laravel Permission package to manage user roles and permissions.
